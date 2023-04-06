@@ -8,6 +8,10 @@ import Button from 'react-bootstrap/Button';
 
 const MyNavbar = () => {
     const location=useLocation()
+
+        console.log(location)
+
+
     return(
 <header>
         <Navbar className="navbar pb-1" expand="lg" data-bs-theme="dark">
@@ -41,17 +45,17 @@ const MyNavbar = () => {
                         </li>
                         
                     </ul>
-
-                    <div className="d-flex justify-content-between align-items-center d-none d-lg-flex" id="navRight">
-                        <div><Form className="d-flex">
+                    <div><Form className="d-flex pe-5">
             <Form.Control
-              type="search"
-              placeholder="Search"
+              type="search" 
+              placeholder={(location.pathname==='/tvShows'?'Search on Tv Shows':'Search')}
               className="me-2"
               aria-label="Search"
             />
             <Button variant="outline-success">Search</Button>
           </Form></div>
+                    <div className="d-flex justify-content-between align-items-center d-none d-lg-flex" id="navRight">
+                        
                         <div>KIDS</div>
                         <div><i className="bi bi-bell-fill fs-5"></i></div>
                         <div>
