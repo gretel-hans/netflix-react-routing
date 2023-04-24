@@ -15,7 +15,6 @@ const Hero=()=>{
                         <Dropdown.Item href="#/action-3">Thriller</Dropdown.Item>
                         <Dropdown.Item href="#/action-3">Documentaries</Dropdown.Item>
                     </Dropdown.Menu>
-
                 </Dropdown>
                 <div id="heroIcons">
                     <span><i className="bi bi-text-left"></i></span>

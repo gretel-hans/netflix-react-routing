@@ -11,7 +11,7 @@ class Gallerie extends Component {
     getFetch = () => {
 
         return (
-            fetch(`https://www.omdbapi.com/?&apikey=59562621&s=${this.props.nomeSerie}`)
+            fetch(`https://www.omdbapi.com/?&apikey=${process.env.REACT_APP_OMDB_KEY}&s=${this.props.nomeSerie}`)
                 .then(response => {
                     return (response.json())})
                         .then(Dati => {

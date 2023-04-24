@@ -13,12 +13,12 @@ const MovieDetails = () => {
     const [comments, setComments] = useState([])
     const [counter, setCounter] = useState(0)
 
-    console.log(params.idFilm);
+    //console.log(params.idFilm);
 
 
     const getSingleMovie = () => {
         return (
-            fetch(`https://www.omdbapi.com/?&apikey=59562621&i=${params.idFilm}`)
+            fetch(`https://www.omdbapi.com/?&apikey=${process.env.REACT_APP_OMDB_KEY}&i=${params.idFilm}`)
                 .then(response => {
                     if (response.ok) {
                         return (response.json())
@@ -42,7 +42,7 @@ const MovieDetails = () => {
             fetch(`https://striveschool-api.herokuapp.com/api/comments/${params.idFilm}`, {
 
                 headers: {
-                    "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDE0MzBkZGY4MWI0MjAwMTM5YjI3ZTciLCJpYXQiOjE2ODA1MjQ5NjMsImV4cCI6MTY4MTczNDU2M30.H1RTrJ1fRu495y_VYqsAHm2xWipWLTP6ZSl-UrPpoH0"
+                    "Authorization": process.env.REACT_APP_COMMENTS_KEY
                 }
             })
                 .then(response => {
@@ -74,8 +74,8 @@ const MovieDetails = () => {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [counter])
 
-    console.log(film)
-    console.log(comments)
+    //console.log(film)
+    //console.log(comments)
 
 
 

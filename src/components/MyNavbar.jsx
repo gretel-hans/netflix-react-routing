@@ -9,9 +9,6 @@ import Button from 'react-bootstrap/Button';
 const MyNavbar = () => {
     const location=useLocation()
 
-        console.log(location)
-
-
     return(
 <header>
         <Navbar className="navbar pb-1" expand="lg" data-bs-theme="dark">

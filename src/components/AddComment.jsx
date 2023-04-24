@@ -31,7 +31,7 @@ const [state,setState]=useState({
               fetch(`https://striveschool-api.herokuapp.com/api/comments`, {
             method: 'POST',
             headers: {
-                "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDE0MzBkZGY4MWI0MjAwMTM5YjI3ZTciLCJpYXQiOjE2ODA1MjQ5NjMsImV4cCI6MTY4MTczNDU2M30.H1RTrJ1fRu495y_VYqsAHm2xWipWLTP6ZSl-UrPpoH0",
+                "Authorization": process.env.REACT_APP_COMMENTS_KEY,
                 "Content-Type": "application/json",   
             },
             body: JSON.stringify(state.contenutoCommento)
